@@ -12,22 +12,14 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsx_runtime_1 = require("react/jsx-runtime");
-const Button = (_a) => {
-    var { children, backgroundColor = "lightblue", size = "md", color = "black" } = _a, rest = __rest(_a, ["children", "backgroundColor", "size", "color"]);
+const TextArea = (_a) => {
+    var { backgroundColor = "white", size = "md", style } = _a, rest = __rest(_a, ["backgroundColor", "size", "style"]);
     const myRem = {
         sm: ".7rem",
         md: "1rem",
         lg: "1.3rem",
     };
-    const styles = {
-        backgroundColor,
-        padding: myRem[size],
-        borderRadius: myRem[size],
-        border: "none",
-        fontSize: myRem[size],
-        color,
-        cursor: "pointer",
-    };
-    return ((0, jsx_runtime_1.jsx)("button", Object.assign({ style: styles }, rest, { children: children }), void 0));
+    const styles = Object.assign(Object.assign({}, style), { backgroundColor, padding: `calc(${myRem[size]} / 3) calc(${myRem[size]}/2)`, borderRadius: `calc(${myRem[size]} / 3)`, fontSize: myRem[size], color: backgroundColor === "black" ? "white" : "black", border: "1px solid gray" });
+    return (0, jsx_runtime_1.jsx)("textarea", Object.assign({ style: styles }, rest), void 0);
 };
-exports.default = Button;
+exports.default = TextArea;

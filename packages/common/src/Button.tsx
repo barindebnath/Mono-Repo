@@ -12,6 +12,7 @@ const Button: FC<Props> = ({
   backgroundColor = "lightblue",
   size = "md",
   color = "black",
+  style,
   ...rest
 }) => {
   const myRem = {
@@ -21,8 +22,9 @@ const Button: FC<Props> = ({
   };
 
   const styles = {
+    ...style,
     backgroundColor,
-    padding: myRem[size],
+    padding: `calc(${myRem[size]} / 2) ${myRem[size]}`,
     borderRadius: myRem[size],
     border: "none",
     fontSize: myRem[size],
